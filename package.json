@@ -1,0 +1,41 @@
+{
+    "name": "vec",
+    "version": "0.0.1",
+    "description": "A zero-dependency vector math library with TypeScript typings",
+    "main": "dist/cjs/vec.js",
+    "module": "dist/esm/vec.js",
+    "types": "dist/typings/vec.d.ts",
+    "author": "",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/jest": "^23.3.1",
+        "ts-jest": "^23.0.1",
+        "typescript": "^2.9.2"
+    },
+    "scripts": {
+        "build-cjs": "tsc -m commonjs --outDir dist/cjs",
+        "build-esm": "tsc -m esnext --outDir dist/esm",
+        "build-typings": "tsc -d true --declarationDir dist/typings --emitDeclarationOnly",
+        "build": "npm run build-cjs && npm run build-esm && npm run build-typings",
+        "test": "jest"
+    },
+    "jest": {
+        "roots": [
+            "<rootDir>/src"
+        ],
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testEnvironment": "node",
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ]
+    }
+}
